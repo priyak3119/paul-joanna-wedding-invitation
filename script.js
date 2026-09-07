@@ -35,7 +35,15 @@ musicButton.addEventListener("click", async () => {
 const pad = (v, n = 2) => String(Math.max(0, v)).padStart(n, "0");
 function updateCountdown() {
   const d = Math.max(0, WEDDING_DATE - Date.now());
-  document.getElementById("days").textContent = pad(Math.ceil(d / 86400000), 3);
+  const values = {
+    days: Math.floor(d / 86400000),
+    hours: Math.floor(d / 3600000) % 24,
+    minutes: Math.floor(d / 60000) % 60,
+    seconds: Math.floor(d / 1000) % 60,
+  };
+  Object.entries(values).forEach(([id, value]) => {
+    document.getElementById(id).textContent = pad(value, id === "days" ? 3 : 2);
+  });
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
@@ -54,10 +62,10 @@ function initScratch() {
   canvas.height = rect.height * ratio;
   ctx.scale(ratio, ratio);
   const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
-  gradient.addColorStop(0, "#4b0610");
-  gradient.addColorStop(0.36, "#8f1c29");
-  gradient.addColorStop(0.66, "#a52c37");
-  gradient.addColorStop(1, "#43050d");
+  gradient.addColorStop(0, "#260207");
+  gradient.addColorStop(0.36, "#4b0812");
+  gradient.addColorStop(0.66, "#66101c");
+  gradient.addColorStop(1, "#240106");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, rect.width, rect.height);
   const sheen = ctx.createRadialGradient(
