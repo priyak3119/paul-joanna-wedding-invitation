@@ -1,36 +1,44 @@
 const WEDDING_DATE = new Date("2026-12-28T10:30:00+05:30");
 const entry = document.getElementById("entry"),
   main = document.getElementById("invitation"),
-  music = document.getElementById("backgroundMusic"),
-  musicButton = document.getElementById("musicButton");
+  musicButton = document.getElementById("musicButton"),
+  musicPanel = document.getElementById("youtubeMusic"),
+  musicPlayer = document.getElementById("youtubeMusicPlayer");
+let musicPlaying = false;
+function sendMusicCommand(command) {
+  musicPlayer.contentWindow?.postMessage(
+    JSON.stringify({ event: "command", func: command, args: [] }),
+    "https://www.youtube-nocookie.com",
+  );
+}
+function setMusicState(playing) {
+  musicPlaying = playing;
+  sendMusicCommand(playing ? "playVideo" : "pauseVideo");
+  musicButton.classList.toggle("playing", playing);
+  musicButton.setAttribute(
+    "aria-label",
+    playing ? "Pause background music" : "Play background music",
+  );
+}
+musicPlayer.addEventListener("load", () => {
+  if (musicPlaying) sendMusicCommand("playVideo");
+});
 document
   .getElementById("openInvitation")
-  .addEventListener("click", async () => {
+  .addEventListener("click", () => {
     main.hidden = false;
     document.body.classList.remove("locked");
     entry.classList.add("hidden");
+    musicPanel.classList.add("visible");
     setTimeout(() => entry.remove(), 950);
     initScratch();
     observeSections();
     startCelebrationEffects();
-    try {
-      await music.play();
-      musicButton.classList.add("playing");
-      musicButton.setAttribute("aria-label", "Pause background music");
-    } catch {}
+    setMusicState(true);
   });
-musicButton.addEventListener("click", async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      musicButton.classList.add("playing");
-      musicButton.setAttribute("aria-label", "Pause background music");
-    } catch {}
-  } else {
-    music.pause();
-    musicButton.classList.remove("playing");
-    musicButton.setAttribute("aria-label", "Play background music");
-  }
+musicButton.addEventListener("click", () => {
+  musicPanel.classList.add("visible");
+  setMusicState(!musicPlaying);
 });
 const pad = (v, n = 2) => String(Math.max(0, v)).padStart(n, "0");
 function updateCountdown() {

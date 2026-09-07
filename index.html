@@ -391,9 +391,18 @@
       <button aria-label="Close image">×</button
       ><img src="assets/couple-art.webp" alt="Enlarged wedding illustration" />
     </dialog>
-    <audio id="backgroundMusic" loop preload="none">
-      <source src="assets/background-music.mp3" type="audio/mpeg" />
-    </audio>
+    <aside class="youtube-music" id="youtubeMusic" aria-label="Wedding music player">
+      <p><span>Now Playing</span>A Love Written by God</p>
+      <iframe
+        id="youtubeMusicPlayer"
+        title="A Love Written by God — Christian Wedding Playlist"
+        width="240"
+        height="135"
+        src="https://www.youtube-nocookie.com/embed/lBjz1NaqATs?enablejsapi=1&playsinline=1&controls=1&rel=0&loop=1&playlist=lBjz1NaqATs"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </aside>
     <script src="script.js"></script>
   </body>
 </html>
