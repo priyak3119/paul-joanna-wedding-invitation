@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#4b0810" />
+    <meta
+      name="description"
+      content="Demo Christian wedding invitation for Daniel and Anna"
+    />
+    <title>Daniel & Anna | Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="locked">
+    <div class="entry" id="entry">
+      <span class="spark spark--one">✦</span
+      ><span class="spark spark--two">✦</span>
+      <button class="envelope" id="openInvitation" aria-label="Open invitation">
+        <img
+          src="assets/invitation-envelope.webp"
+          alt="Ivory Christian wedding invitation envelope"
+        /><span class="seal">D <i>&</i> A</span>
+      </button>
+      <h1>You’re Invited</h1>
+      <p>Tap the envelope to open our invitation</p>
+    </div>
+
+    <button class="music" id="musicButton" aria-label="Play background music">
+      ♪
+    </button>
+    <main id="invitation" hidden>
+      <div class="motion-layer" id="motionLayer" aria-hidden="true"></div>
+      <section class="save-date red-section full-screen">
+        <div class="petals" aria-hidden="true">✦　·　✦</div>
+        <div class="save-card reveal">
+          <div class="round-logo">D <i>&</i> A</div>
+          <p class="kicker">Save the Date</p>
+          <p class="script-line">
+            For the wedding celebration of Daniel & Anna
+          </p>
+          <div class="reveal-card" id="revealCard">
+            <canvas
+              id="scratchCanvas"
+              role="button"
+              tabindex="0"
+              aria-label="Scratch to reveal the wedding date"
+            ></canvas>
+            <div class="revealed">
+              <span>Save the Date</span><strong>28th December 2026</strong
+              ><small>Our day, revealed with joy</small>
+            </div>
+            <div class="reveal-burst" id="revealBurst" aria-hidden="true"></div>
+            <p class="scratch-label"><span>☝</span> Scratch here to reveal the date</p>
+          </div>
+          <p class="scratch-hint">Use your finger or mouse and scratch the burgundy card</p>
+          <p class="sr-only" id="revealStatus" aria-live="polite"></p>
+          <div class="countdown" aria-label="Wedding countdown" hidden>
+            <div><strong id="days">000</strong><span>Days to Go</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blessing red-section full-screen">
+        <div class="blessing-card reveal">
+          <div class="church-bells" aria-hidden="true">
+            <span>🔔</span><span>🔔</span>
+          </div>
+          <span class="cross">✝</span>
+          <h2>In the Name of the Father,<br />the Son and the Holy Spirit</h2>
+          <blockquote>
+            “Therefore what God has joined together, let no one separate.”
+          </blockquote>
+          <p class="citation">Matthew 19:6</p>
+          <p>
+            With grateful hearts, we warmly invite you to join our most
+            cherished celebration and bless us as we begin a lifetime together.
+          </p>
+        </div>
+        <div class="family-intro reveal">
+          <div>
+            <h1>Daniel Mathew</h1>
+            <p>Son of [Groom’s Parents]</p>
+            <p class="small">
+              Beloved grandson of [Groom’s Grandparents]
+            </p>
+          </div>
+          <span class="weds">weds</span>
+          <div>
+            <h1>Anna Maria</h1>
+            <p>Daughter of [Bride’s Parents]</p>
+            <p class="small">
+              Beloved granddaughter of [Bride’s Grandparents]
+            </p>
+          </div>
+        </div>
+        <img
+          class="family-image"
+          src="assets/bible-rings-art.webp"
+          alt="Watercolour illustration of wedding rings beside the Holy Bible"
+        />
+      </section>
+
+      <section class="events red-section" id="events">
+        <div class="section-heading reveal">
+          <h2>Events Schedule</h2>
+          <p>#DanielWedsAnna</p>
+          <span>❀</span>
+        </div>
+        <div class="events-card">
+          <article class="event-row reverse reveal">
+            <div class="event-copy">
+              <span class="event-number">Event 1</span>
+              <p>
+                An evening of songs, family memories and joyful anticipation.
+              </p>
+              <h3>Wedding Eve</h3>
+              <strong>27th December 2026</strong>
+              <p>
+                ✦ Welcome Prayer <b>at 6:30 PM</b><br />✦ Dinner & Music
+                <b>from 7:00 PM</b>
+              </p>
+              <a
+                class="gold-button"
+                href="https://maps.google.com/"
+                target="_blank"
+                rel="noreferrer"
+                >View Venue Location</a
+              >
+            </div>
+            <img
+              src="assets/bride-art.webp"
+              alt="Watercolour bride inside a church"
+            />
+          </article>
+          <article class="event-row reveal">
+            <div class="event-copy">
+              <span class="event-number">Event 2</span>
+              <p>
+                The sacred covenant, witnessed before God and our loved ones.
+              </p>
+              <h3>Holy Matrimony</h3>
+              <strong>28th December 2026</strong>
+              <p>
+                ✦ Wedding Service <b>at 10:30 AM</b><br />✦ Nuptial Blessing
+                <b>during the service</b>
+              </p>
+              <a
+                class="gold-button"
+                href="https://maps.google.com/"
+                target="_blank"
+                rel="noreferrer"
+                >View Church Location</a
+              >
+            </div>
+            <img
+              src="assets/couple-art.webp"
+              alt="Watercolour Christian wedding couple outside a church"
+            />
+          </article>
+          <article class="event-row reverse reveal">
+            <div class="event-copy">
+              <span class="event-number">Event 3</span>
+              <p>
+                Love, laughter, music and a beautiful beginning celebrated
+                together.
+              </p>
+              <h3>Wedding Reception</h3>
+              <strong>28th December 2026</strong>
+              <p>
+                ✦ Reception <b>from 1:00 PM</b><br />✦ Lunch
+                <b>following the welcome</b>
+              </p>
+              <a
+                class="gold-button"
+                href="https://maps.google.com/"
+                target="_blank"
+                rel="noreferrer"
+                >View Reception Location</a
+              >
+            </div>
+            <img
+              src="assets/bible-rings-art.webp"
+              alt="Watercolour wedding rings for the reception celebration"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section class="moments red-section">
+        <div class="section-heading reveal">
+          <h2>Our Moments</h2>
+          <p>Glimpses of Togetherness</p>
+          <span>❀</span>
+        </div>
+        <div class="story-card reveal">
+          <img
+            src="assets/couple-art.webp"
+            alt="Watercolour portrait of Daniel and Anna"
+          />
+          <div>
+            <h3>Daniel and Anna</h3>
+            <p>
+              Daniel’s quiet kindness and Anna’s warm, grounded spirit found
+              each other through a friendship that soon felt like home. With
+              prayer, the blessing of both families and the grace of God, their
+              journey unfolded naturally—two lives drawn together by faith,
+              laughter and a shared hope for the future.
+            </p>
+          </div>
+        </div>
+        <div class="film-frame reveal">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/bible-rings-art.webp"
+          >
+            <source src="assets/demo-wedding-film.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="photo-strip">
+          <button data-image="assets/bride-art.webp">
+            <img
+              src="assets/bride-art.webp"
+              alt="Watercolour bride in the church"
+            /></button
+          ><button data-image="assets/bible-rings-art.webp">
+            <img
+              src="assets/bible-rings-art.webp"
+              alt="Watercolour wedding rings and Bible"
+            /></button
+          ><button data-image="assets/couple-art.webp">
+            <img
+              src="assets/couple-art.webp"
+              alt="Watercolour couple outside the church"
+            />
+          </button>
+        </div>
+      </section>
+
+      <section class="outfits red-section">
+        <div class="section-heading reveal">
+          <h2>Our Wedding Outfit Planner</h2>
+          <p>Two Signature Celebrations, Beautiful Memories</p>
+        </div>
+        <div class="outfit-grid">
+          <article class="outfit-card reveal">
+            <img
+              src="assets/bride-art.webp"
+              alt="Illustrated wedding ceremony style"
+            /><span>Event 1</span>
+            <h3>Holy Matrimony</h3>
+            <h4>Ivory & Traditional Elegance</h4>
+            <p>Colour Palette</p>
+            <div class="swatches">
+              <i style="--c: #fffaf0"></i><i style="--c: #d6b36a"></i
+              ><i style="--c: #789078"></i><i style="--c: #b78a8f"></i>
+            </div>
+          </article>
+          <article class="outfit-card reveal">
+            <img
+              src="assets/couple-art.webp"
+              alt="Illustrated reception style"
+            /><span>Event 2</span>
+            <h3>Wedding Reception</h3>
+            <h4>Classic Evening Glamour</h4>
+            <p>Colour Palette</p>
+            <div class="swatches">
+              <i style="--c: #6b151e"></i><i style="--c: #1d1a1a"></i
+              ><i style="--c: #c79a48"></i><i style="--c: #e8d9c5"></i>
+            </div>
+          </article>
+        </div>
+        <p class="same-love">♥ Different Vibes, Same Love ♥</p>
+      </section>
+
+      <section class="rsvp red-section" id="rsvp">
+        <div class="presence reveal">
+          <h2>Awaiting Your Noble Presence</h2>
+          <span>❀</span>
+          <p>
+            Join us as we celebrate love, laughter and the beginning of forever
+            together.
+          </p>
+          <small>With love from</small>
+          <h3>The Bride’s & Groom’s Families</h3>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <h4>Bride’s Side</h4>
+            <a href="https://wa.me/?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20the%20wedding." target="_blank" rel="noreferrer">WhatsApp Bride’s Family</a>
+          </div>
+          <div>
+            <h4>Groom’s Side</h4>
+            <a href="https://wa.me/?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20the%20wedding." target="_blank" rel="noreferrer">WhatsApp Groom’s Family</a>
+          </div>
+        </div>
+        <form class="rsvp-form reveal" id="rsvpForm">
+          <span class="form-leaf form-leaf--one" aria-hidden="true">🌿</span
+          ><span class="form-flower" aria-hidden="true">🌼</span>
+          <div class="round-logo">D <i>&</i> A</div>
+          <h3>Share Your Response</h3>
+          <p>Please RSVP by 10th December 2026</p>
+          <label
+            >Your Name<span class="field-wrap"
+              ><input
+                name="name"
+                required
+                placeholder="Enter your full name"
+              /><span aria-hidden="true">🌿</span></span
+            ></label
+          >
+          <fieldset>
+            <legend>Attendance</legend>
+            <input type="hidden" name="attendance" id="attendanceValue" value="Attending" />
+            <div class="choice-row" role="group" aria-label="Choose attendance response">
+              <button class="attendance-choice is-selected" type="button" data-attendance="Attending" aria-pressed="true">
+                <span class="choice-icon" aria-hidden="true">✧</span><b>Attending</b>
+              </button>
+              <button class="attendance-choice" type="button" data-attendance="Wishes Online" aria-pressed="false">
+                <span class="choice-icon" aria-hidden="true">♧</span><b>Wishes Online</b>
+              </button>
+            </div>
+          </fieldset>
+          <div class="rsvp-panel is-active" id="attendingPanel" data-rsvp-panel="Attending">
+            <label>Number of Guests<select name="guests">
+                <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option>
+                <option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option>
+              </select></label>
+            <fieldset>
+              <legend>Events Attending</legend>
+              <label class="check"><input type="checkbox" name="event" value="Wedding Eve" /><span><b>Wedding Eve</b><small>27th December 2026</small></span></label>
+              <label class="check"><input type="checkbox" name="event" value="Holy Matrimony" /><span><b>Holy Matrimony</b><small>28th December 2026</small></span></label>
+              <label class="check"><input type="checkbox" name="event" value="Wedding Reception" /><span><b>Wedding Reception</b><small>28th December 2026</small></span></label>
+            </fieldset>
+            <label>Congratulations Message<textarea name="message" rows="4" placeholder="Write a message for the couple..."></textarea></label>
+          </div>
+          <div class="rsvp-panel" id="wishesPanel" data-rsvp-panel="Wishes Online" hidden>
+            <label>Send Your Warm Wishes<textarea name="online_wish" rows="5" placeholder="Write your blessings and wishes here..." disabled></textarea></label>
+            <p class="online-note"><span aria-hidden="true">♡</span> Your blessing will mean the world to the couple.</p>
+          </div>
+          <button class="submit-button">Send Response on WhatsApp</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </section>
+
+      <section class="venues red-section">
+        <div class="section-heading reveal">
+          <p>Where We Celebrate</p>
+          <h2>Venues & Directions</h2>
+          <span>❀</span>
+        </div>
+        <div class="venue-grid">
+          <article class="venue-card reveal">
+            <span>1. Wedding Eve Venue</span>
+            <h3>[Wedding Eve Venue]</h3>
+            <p>📍 [Add full venue address]</p>
+            <iframe
+              title="Wedding eve venue map"
+              loading="lazy"
+              src="https://www.google.com/maps?q=Wedding+Venue&output=embed"
+            ></iframe
+            ><a
+              class="gold-button"
+              target="_blank"
+              rel="noreferrer"
+              href="https://maps.google.com/"
+              >Navigate to Venue</a
+            >
+          </article>
+          <article class="venue-card reveal">
+            <span>2. Holy Matrimony Venue</span>
+            <h3>[Church Name]</h3>
+            <p>📍 [Add full church address]</p>
+            <iframe
+              title="Church venue map"
+              loading="lazy"
+              src="https://www.google.com/maps?q=Church&output=embed"
+            ></iframe
+            ><a
+              class="gold-button"
+              target="_blank"
+              rel="noreferrer"
+              href="https://maps.google.com/"
+              >Navigate to Church</a
+            >
+          </article>
+          <article class="venue-card reveal">
+            <span>3. Reception Venue</span>
+            <h3>[Reception Venue]</h3>
+            <p>📍 [Add full reception address]</p>
+            <iframe
+              title="Reception venue map"
+              loading="lazy"
+              src="https://www.google.com/maps?q=Wedding+Reception+Venue&output=embed"
+            ></iframe
+            ><a
+              class="gold-button"
+              target="_blank"
+              rel="noreferrer"
+              href="https://maps.google.com/"
+              >Navigate to Reception</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <p>With Love</p>
+        <h3>Daniel & Anna</h3>
+        <span>♥</span>
+        <p>27th–28th December 2026</p>
+        <small>#DanielWedsAnna</small>
+      </footer>
+    </main>
+    <dialog class="lightbox" id="lightbox">
+      <button aria-label="Close image">×</button
+      ><img src="assets/couple-art.webp" alt="Enlarged wedding illustration" />
+    </dialog>
+    <audio id="backgroundMusic" loop preload="none">
+      <source src="assets/background-music.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="script.js"></script>
+  </body>
+</html>
