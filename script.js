@@ -1,4 +1,4 @@
-const WEDDING_DATE = new Date("2026-12-28T10:30:00+05:30");
+const WEDDING_DATE = new Date("2026-12-29T11:00:00+05:30");
 const entry = document.getElementById("entry"),
   main = document.getElementById("invitation"),
   musicButton = document.getElementById("musicButton"),
@@ -61,6 +61,7 @@ function initScratch() {
     burst = document.getElementById("revealBurst"),
     status = document.getElementById("revealStatus"),
     hint = document.querySelector(".scratch-hint"),
+    prompt = box.querySelector(".scratch-label"),
     countdown = document.querySelector(".countdown"),
     ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -111,8 +112,10 @@ function initScratch() {
     drawing = false;
     ctx.clearRect(0, 0, rect.width, rect.height);
     box.classList.add("scratched", "revealed-celebration");
+    canvas.hidden = true;
+    prompt?.remove();
     canvas.setAttribute("aria-disabled", "true");
-    status.textContent = "Wedding date revealed: 28th December 2026";
+    status.textContent = "Wedding date revealed: 29th December 2026";
     hint.textContent = "Our special day is revealed ✦";
     countdown.hidden = false;
     countdown.classList.add("countdown-celebration");
