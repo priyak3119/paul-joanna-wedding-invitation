@@ -45,7 +45,7 @@ button,input,select,textarea { font: inherit; }
 }
 .contact-grid {
   grid-template-columns: 1fr;
-  max-width: 700px;
+  max-width: 420px;
 }
 .venue-grid {
   grid-template-columns: 1fr;
