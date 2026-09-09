@@ -304,7 +304,11 @@ rsvpForm.addEventListener("submit", (e) => {
       ? form.get("message") || "With prayers and best wishes"
       : form.get("online_wish") || "Sending our prayers and warm wishes";
   const text = `Wedding RSVP%0AName: ${encodeURIComponent(name)}%0AResponse: ${encodeURIComponent(attendance)}%0AGuests: ${encodeURIComponent(guests)}%0AEvents: ${encodeURIComponent(events)}%0AMessage: ${encodeURIComponent(message)}`;
-  window.open(`https://wa.me/?text=${text}`, "_blank", "noopener,noreferrer");
+  window.open(
+    `https://wa.me/971501432022?text=${text}`,
+    "_blank",
+    "noopener,noreferrer",
+  );
   rsvpForm.reset();
   selectAttendance("Attending");
   formStatus.textContent = "Response submitted successfully.";
