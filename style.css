@@ -43,12 +43,6 @@ button,input,select,textarea { font: inherit; }
 .reveal-card.revealed-celebration #scratchCanvas {
   display: none;
 }
-.family-signoff {
-  margin: 8px auto 0;
-  color: #f3d9d4;
-  font-size: 1rem;
-  line-height: 1.55;
-}
 .contact-grid {
   grid-template-columns: 1fr;
   max-width: 700px;
@@ -56,4 +50,8 @@ button,input,select,textarea { font: inherit; }
 .venue-grid {
   grid-template-columns: 1fr;
   max-width: 760px;
+}
+.footer-family {
+  text-transform: none;
+  letter-spacing: 0.04em;
 }
