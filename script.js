@@ -284,7 +284,13 @@ attendanceButtons.forEach((button) =>
     activePanel.querySelector("textarea, select")?.focus({ preventScroll: true });
   }),
 );
-document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+const rsvpForm = document.getElementById("rsvpForm"),
+  formStatus = document.getElementById("formStatus"),
+  successDialog = document.getElementById("successDialog");
+function selectAttendance(selection = "Attending") {
+  document.querySelector(`[data-attendance="${selection}"]`)?.click();
+}
+rsvpForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const form = new FormData(e.currentTarget),
     name = form.get("name"),
@@ -298,9 +304,16 @@ document.getElementById("rsvpForm").addEventListener("submit", (e) => {
       ? form.get("message") || "With prayers and best wishes"
       : form.get("online_wish") || "Sending our prayers and warm wishes";
   const text = `Wedding RSVP%0AName: ${encodeURIComponent(name)}%0AResponse: ${encodeURIComponent(attendance)}%0AGuests: ${encodeURIComponent(guests)}%0AEvents: ${encodeURIComponent(events)}%0AMessage: ${encodeURIComponent(message)}`;
-  document.getElementById("formStatus").textContent =
-    attending
-      ? "Thank you. Your attendance response is ready to send on WhatsApp."
-      : "Thank you. Your warm wishes are ready to send on WhatsApp.";
-  window.open(`https://wa.me/?text=${text}`, "_blank", "noopener");
+  window.open(`https://wa.me/?text=${text}`, "_blank", "noopener,noreferrer");
+  rsvpForm.reset();
+  selectAttendance("Attending");
+  formStatus.textContent = "Response submitted successfully.";
+  successDialog.showModal();
+});
+document.getElementById("closeSuccess").addEventListener("click", () => {
+  successDialog.close();
+  rsvpForm.querySelector('[name="name"]').focus();
+});
+successDialog.addEventListener("click", (event) => {
+  if (event.target === successDialog) successDialog.close();
 });

@@ -60,3 +60,23 @@ button,input,select,textarea { font: inherit; }
   width: 100%;
   border-radius: 16px;
 }
+
+/* Refined editorial typography and compact invitation actions */
+:root { --display: "Bodoni Moda", Didot, Georgia, serif; }
+.entry h1,.kicker,.section-heading h2,.family-intro h1,.story-card h3,.presence h2,.rsvp-form h3,footer h3 { font-family:var(--display); font-weight:500; letter-spacing:.035em; }
+.kicker,.section-heading h2 { letter-spacing:.075em; }
+.form-status:not(:empty){margin-top:16px;padding:10px 14px;border:1px solid #8b2735;border-radius:12px;background:#f0ddd8;color:#57121c;font-weight:600}
+.whatsapp-float{position:fixed;z-index:58;left:18px;bottom:18px;display:grid;place-items:center;width:50px;height:50px;border:1px solid #d9b25f99;border-radius:50%;background:#fffaf4;color:#246b43;box-shadow:0 12px 34px #2000074d;transition:transform .25s ease,box-shadow .25s ease}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 16px 38px #20000766}
+.whatsapp-float:focus-visible{outline:3px solid #f4d074;outline-offset:3px}
+.whatsapp-float svg{width:27px;height:27px;fill:currentColor}
+.success-dialog{width:min(470px,calc(100% - 32px));padding:38px 30px;border:1px solid #d2ae65;border-radius:28px;background:#fff9f2;color:#53141d;text-align:center;box-shadow:0 28px 80px #23000680}
+.success-dialog::backdrop{background:#210006b8;backdrop-filter:blur(5px)}
+.success-dialog[open]{animation:dialog-in .35s ease both}
+.success-mark{display:grid;place-items:center;width:66px;height:66px;margin:0 auto 15px;border-radius:50%;background:#5c1020;color:#f5d482;font-size:2rem}
+.success-kicker{margin:0;color:#9a7738;font:500 .78rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase}
+.success-dialog h2{margin:10px 0;font:500 clamp(1.8rem,6vw,2.5rem)/1.12 var(--display)}
+.success-dialog p{margin:12px auto 22px}
+.success-dialog button{min-width:130px;padding:11px 22px;border:0;border-radius:999px;background:#64131e;color:#ffe7ad;cursor:pointer}
+@keyframes dialog-in{from{opacity:0;transform:translateY(14px) scale(.96)}}
+@media(max-width:760px){.whatsapp-float{left:12px;bottom:12px}}
