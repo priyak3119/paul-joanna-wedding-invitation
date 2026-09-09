@@ -55,3 +55,8 @@ button,input,select,textarea { font: inherit; }
   text-transform: none;
   letter-spacing: 0.04em;
 }
+.film-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+}
