@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -29,7 +29,6 @@
           src="assets/embossed-envelope.webp"
           alt="Dusty rose embossed wedding envelope with a gold wax seal"
         />
-        <span class="tap-seal">Tap to Open</span>
       </button>
       <p class="entry-note">Tap the golden seal to open our invitation</p>
     </div>
@@ -47,6 +46,7 @@
           <p class="script-line">For the wedding celebration of</p>
           <p class="gold-couple-names"><strong>Paul Daniel</strong><i>&amp;</i><strong>Joanne Biju</strong></p>
           <div class="reveal-card" id="revealCard">
+            <div class="scratch-heart" aria-hidden="true"></div>
             <canvas
               id="scratchCanvas"
               role="button"
@@ -60,7 +60,7 @@
             <div class="reveal-burst" id="revealBurst" aria-hidden="true"></div>
             <p class="scratch-label"><span>☝</span> Scratch here to reveal the date</p>
           </div>
-          <p class="scratch-hint">Use your finger or mouse and scratch the burgundy card</p>
+          <p class="scratch-hint">Use your finger or mouse and scratch the glittering heart</p>
           <p class="sr-only" id="revealStatus" aria-live="polite"></p>
           <div class="countdown" aria-label="Wedding countdown" hidden>
             <div><strong id="days">000</strong><span>Days</span></div>
@@ -135,8 +135,8 @@
               >
             </div>
             <img
-              src="assets/couple-art-side-approved-cropped.webp"
-              alt="Watercolour Christian wedding portrait of Paul Daniel and Joanne Biju"
+              src="assets/engagement-hands.webp"
+              alt="Paul and Joanne engagement ring and attire detail"
             />
           </article>
         </div>
@@ -163,24 +163,6 @@
               laughter and a shared hope for the future.
             </p>
           </div>
-        </div>
-        <div class="photo-strip">
-          <button data-image="assets/bride-art-joanne-v3.webp">
-            <img
-              src="assets/bride-art-joanne-v3.webp"
-              alt="Watercolour portrait of Joanne Biju as a Christian bride"
-            /></button
-          ><button data-image="assets/engagement-hands.webp">
-            <img
-              src="assets/engagement-hands.webp"
-              alt="Paul and Joanne engagement ring and attire detail"
-            /></button
-          ><button data-image="assets/couple-art-side-approved-cropped.webp">
-            <img
-              src="assets/couple-art-side-approved-cropped.webp"
-              alt="Watercolour portrait of Paul Daniel and Joanne Biju"
-            />
-          </button>
         </div>
       </section>
 

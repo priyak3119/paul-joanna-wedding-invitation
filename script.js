@@ -84,10 +84,21 @@ function initScratch() {
   canvas.height = rect.height * ratio;
   ctx.scale(ratio, ratio);
   const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
-  gradient.addColorStop(0, "#260207");
-  gradient.addColorStop(0.36, "#4b0812");
-  gradient.addColorStop(0.66, "#66101c");
-  gradient.addColorStop(1, "#240106");
+  gradient.addColorStop(0, "#f3d8dc");
+  gradient.addColorStop(0.36, "#d9a4ad");
+  gradient.addColorStop(0.66, "#c48794");
+  gradient.addColorStop(1, "#efd0d5");
+  const heartX = rect.width / 2;
+  const heartY = rect.height * 0.52;
+  ctx.beginPath();
+  ctx.moveTo(heartX, heartY + 76);
+  ctx.bezierCurveTo(heartX - 18, heartY + 60, heartX - 76, heartY + 22, heartX - 76, heartY - 25);
+  ctx.bezierCurveTo(heartX - 76, heartY - 59, heartX - 36, heartY - 75, heartX, heartY - 41);
+  ctx.bezierCurveTo(heartX + 36, heartY - 75, heartX + 76, heartY - 59, heartX + 76, heartY - 25);
+  ctx.bezierCurveTo(heartX + 76, heartY + 22, heartX + 18, heartY + 60, heartX, heartY + 76);
+  ctx.closePath();
+  ctx.save();
+  ctx.clip();
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, rect.width, rect.height);
   const sheen = ctx.createRadialGradient(
@@ -103,8 +114,8 @@ function initScratch() {
   sheen.addColorStop(1, "#0000001f");
   ctx.fillStyle = sheen;
   ctx.fillRect(0, 0, rect.width, rect.height);
-  ctx.fillStyle = "#f5d27b";
-  for (let i = 0; i < 130; i++) {
+  ctx.fillStyle = "#fff4c8";
+  for (let i = 0; i < 240; i++) {
     const x = (i * 73) % rect.width,
       y = (i * 47) % rect.height,
       size = 0.35 + (i % 4) * 0.22;
@@ -114,6 +125,7 @@ function initScratch() {
     ctx.fill();
   }
   ctx.globalAlpha = 1;
+  ctx.restore();
   ctx.globalCompositeOperation = "destination-out";
   let drawing = false,
     moves = 0,
