@@ -37,6 +37,7 @@ document
       star.style.setProperty("--star-delay", `${(i % 10) * 0.045}s`);
       stars.appendChild(star);
     }
+    setTimeout(() => entry.classList.add("revealing"), 1050);
     setTimeout(() => {
       main.hidden = false;
       document.body.classList.remove("locked");
@@ -45,9 +46,9 @@ document
       observeSections();
       startCelebrationEffects();
       setMusicState(true);
-    }, 720);
-    setTimeout(() => entry.classList.add("hidden"), 1250);
-    setTimeout(() => entry.remove(), 2200);
+    }, 1450);
+    setTimeout(() => entry.classList.add("hidden"), 1750);
+    setTimeout(() => entry.remove(), 2350);
   });
 musicButton.addEventListener("click", () => {
   musicPanel.classList.add("visible");
@@ -68,6 +69,28 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+function startNameSparkles() {
+  const names = document.querySelectorAll(".family-person h1");
+  if (!names.length) return;
+  const symbols = ["✦", "✧", "·", "✶"];
+  const releaseSpark = () => {
+    names.forEach((name, nameIndex) => {
+      const spark = document.createElement("span");
+      spark.className = "name-spark";
+      spark.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      spark.style.setProperty("--spark-x", `${8 + Math.random() * 76}%`);
+      spark.style.setProperty("--spark-y", `${14 + Math.random() * 62}%`);
+      spark.style.setProperty("--spark-size", `${0.55 + Math.random() * 0.75}rem`);
+      spark.style.setProperty("--spark-speed", `${1.2 + Math.random() * 1.2}s`);
+      spark.style.animationDelay = `${nameIndex * 0.12}s`;
+      name.parentElement.appendChild(spark);
+      setTimeout(() => spark.remove(), 2800);
+    });
+  };
+  releaseSpark();
+  setInterval(releaseSpark, 900);
+}
+startNameSparkles();
 function initScratch() {
   const canvas = document.getElementById("scratchCanvas"),
     box = document.getElementById("revealCard"),
@@ -89,13 +112,14 @@ function initScratch() {
   gradient.addColorStop(0.66, "#c48794");
   gradient.addColorStop(1, "#efd0d5");
   const heartX = rect.width / 2;
-  const heartY = rect.height * 0.62;
+  const heartY = rect.height * 0.6;
   ctx.beginPath();
-  ctx.moveTo(heartX, heartY + 68);
-  ctx.bezierCurveTo(heartX - 16, heartY + 56, heartX - 70, heartY + 20, heartX - 70, heartY - 24);
-  ctx.bezierCurveTo(heartX - 70, heartY - 54, heartX - 34, heartY - 68, heartX, heartY - 37);
-  ctx.bezierCurveTo(heartX + 34, heartY - 68, heartX + 70, heartY - 54, heartX + 70, heartY - 24);
-  ctx.bezierCurveTo(heartX + 70, heartY + 20, heartX + 16, heartY + 56, heartX, heartY + 68);
+  const heartScale = rect.width <= 360 ? 0.88 : 1;
+  ctx.moveTo(heartX, heartY + 103 * heartScale);
+  ctx.bezierCurveTo(heartX - 24 * heartScale, heartY + 84 * heartScale, heartX - 110 * heartScale, heartY + 30 * heartScale, heartX - 110 * heartScale, heartY - 39 * heartScale);
+  ctx.bezierCurveTo(heartX - 110 * heartScale, heartY - 87 * heartScale, heartX - 54 * heartScale, heartY - 105 * heartScale, heartX, heartY - 57 * heartScale);
+  ctx.bezierCurveTo(heartX + 54 * heartScale, heartY - 105 * heartScale, heartX + 110 * heartScale, heartY - 87 * heartScale, heartX + 110 * heartScale, heartY - 39 * heartScale);
+  ctx.bezierCurveTo(heartX + 110 * heartScale, heartY + 30 * heartScale, heartX + 24 * heartScale, heartY + 84 * heartScale, heartX, heartY + 103 * heartScale);
   ctx.closePath();
   ctx.save();
   ctx.clip();
@@ -114,17 +138,6 @@ function initScratch() {
   sheen.addColorStop(1, "#0000001f");
   ctx.fillStyle = sheen;
   ctx.fillRect(0, 0, rect.width, rect.height);
-  ctx.fillStyle = "#fff4c8";
-  for (let i = 0; i < 240; i++) {
-    const x = (i * 73) % rect.width,
-      y = (i * 47) % rect.height,
-      size = 0.35 + (i % 4) * 0.22;
-    ctx.globalAlpha = 0.08 + (i % 5) * 0.025;
-    ctx.beginPath();
-    ctx.arc(x, y, size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  ctx.globalAlpha = 1;
   ctx.restore();
   ctx.globalCompositeOperation = "destination-out";
   let drawing = false,
@@ -144,11 +157,11 @@ function initScratch() {
     hint.textContent = "Our special day is revealed ✦";
     countdown.hidden = false;
     countdown.classList.add("countdown-celebration");
-    const symbols = ["✦", "✧", "❀", "❁", "•", "♡"];
-    for (let i = 0; i < 34; i++) {
+    const symbols = ["✦", "✧", "·"];
+    for (let i = 0; i < 12; i++) {
       const particle = document.createElement("span"),
-        angle = (Math.PI * 2 * i) / 34,
-        distance = 75 + (i % 6) * 18;
+        angle = (Math.PI * 2 * i) / 12,
+        distance = 62 + (i % 4) * 14;
       particle.textContent = symbols[i % symbols.length];
       particle.style.setProperty("--burst-x", `${Math.cos(angle) * distance}px`);
       particle.style.setProperty("--burst-y", `${Math.sin(angle) * distance}px`);
@@ -157,7 +170,7 @@ function initScratch() {
       particle.style.setProperty("--burst-size", `${0.72 + (i % 4) * 0.18}rem`);
       particle.style.setProperty(
         "--burst-color",
-        i % 3 === 0 ? "#fff1dc" : i % 3 === 1 ? "#f2bc45" : "#8a1d2a",
+        i % 2 === 0 ? "#fff1dc" : "#f4b084",
       );
       burst.appendChild(particle);
     }
