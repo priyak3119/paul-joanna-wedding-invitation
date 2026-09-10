@@ -256,7 +256,7 @@ p,blockquote,label,legend,input,select,textarea,.gold-button{font-family:"Cormor
 .save-date{
   position:relative;
   isolation:isolate;
-  place-items:center start;
+  place-items:center;
   padding:clamp(34px,6vw,84px);
   overflow:hidden;
   background:
@@ -458,3 +458,8 @@ p,blockquote,label,legend,input,select,textarea,.gold-button{font-family:"Cormor
 .family-intro .family-person .small{color:#fff2e9}
 .name-spark{color:#ffd9b8;text-shadow:0 0 5px #fff1e2,0 0 11px #f4b084;animation-duration:1.8s;transform:scale(.7)}
 @media(max-width:560px){.family-intro h1{padding:0 10px;font-size:3.45rem;line-height:1.1}}
+
+/* Center the invitation group on desktop without changing mobile. */
+@media (min-width: 761px) {
+  .save-card { margin-inline: auto; }
+}
