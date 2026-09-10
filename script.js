@@ -26,15 +26,28 @@ musicPlayer.addEventListener("load", () => {
 document
   .getElementById("openInvitation")
   .addEventListener("click", () => {
-    main.hidden = false;
-    document.body.classList.remove("locked");
-    entry.classList.add("hidden");
-    musicPanel.classList.add("visible");
-    setTimeout(() => entry.remove(), 950);
-    initScratch();
-    observeSections();
-    startCelebrationEffects();
-    setMusicState(true);
+    if (entry.classList.contains("opening")) return;
+    entry.classList.add("opening");
+    const stars = entry.querySelector(".entry-stars");
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement("span");
+      star.textContent = i % 3 === 0 ? "✦" : "·";
+      star.style.setProperty("--star-x", `${8 + ((i * 37) % 84)}%`);
+      star.style.setProperty("--star-y", `${12 + ((i * 53) % 76)}%`);
+      star.style.setProperty("--star-delay", `${(i % 10) * 0.045}s`);
+      stars.appendChild(star);
+    }
+    setTimeout(() => {
+      main.hidden = false;
+      document.body.classList.remove("locked");
+      musicPanel.classList.add("visible");
+      initScratch();
+      observeSections();
+      startCelebrationEffects();
+      setMusicState(true);
+    }, 720);
+    setTimeout(() => entry.classList.add("hidden"), 1250);
+    setTimeout(() => entry.remove(), 2200);
   });
 musicButton.addEventListener("click", () => {
   musicPanel.classList.add("visible");

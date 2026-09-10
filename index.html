@@ -19,16 +19,19 @@
   </head>
   <body class="locked">
     <div class="entry" id="entry">
+      <div class="entry-curtain entry-curtain--left" aria-hidden="true"></div>
+      <div class="entry-curtain entry-curtain--right" aria-hidden="true"></div>
+      <div class="entry-stars" aria-hidden="true"></div>
       <span class="spark spark--one">✦</span
       ><span class="spark spark--two">✦</span>
       <button class="envelope" id="openInvitation" aria-label="Open invitation">
         <img
-          src="assets/invitation-envelope.webp"
-          alt="Ivory Christian wedding invitation envelope"
+          src="assets/embossed-envelope.webp"
+          alt="Dusty rose embossed wedding envelope with a gold wax seal"
         />
+        <span class="tap-seal">Tap to Open</span>
       </button>
-      <h1>You’re Invited</h1>
-      <p>Tap the envelope to open our invitation</p>
+      <p class="entry-note">Tap the golden seal to open our invitation</p>
     </div>
 
     <button class="music" id="musicButton" aria-label="Play background music">
@@ -41,9 +44,8 @@
         <div class="save-card reveal">
           <div class="round-logo">P <i>&</i> J</div>
           <p class="kicker">Save the Date</p>
-          <p class="script-line">
-            For the wedding celebration of Paul Daniel & Joanne Biju
-          </p>
+          <p class="script-line">For the wedding celebration of</p>
+          <p class="gold-couple-names"><strong>Paul Daniel</strong><i>&amp;</i><strong>Joanne Biju</strong></p>
           <div class="reveal-card" id="revealCard">
             <canvas
               id="scratchCanvas"
@@ -71,10 +73,6 @@
 
       <section class="blessing red-section full-screen">
         <div class="blessing-card reveal">
-          <div class="church-bells" aria-hidden="true">
-            <span>🔔</span><span>🔔</span>
-          </div>
-          <span class="cross">✝</span>
           <h2>In the Name of the Father,<br />the Son and the Holy Spirit</h2>
           <blockquote>
             “Therefore what God has joined together, let no one separate.”
@@ -88,7 +86,7 @@
         <div class="family-intro reveal">
           <div>
             <h1>Paul Daniel</h1>
-            <p>Son of Daniel Joseph Simpson & Mrs. Saly Daniel</p>
+            <p>S/o Mr. Daniel Joseph Simpson &amp; Mrs. Saly Daniel</p>
             <p class="small">
               “Mullassery House”, Kadapakkada, Kollam
             </p>
@@ -96,7 +94,7 @@
           <span class="weds">weds</span>
           <div>
             <h1>Joanne Biju</h1>
-            <p>Daughter of Dr. Biju Justus & Mrs. Gina Biju Justus</p>
+            <p>D/o Dr. Biju Justus &amp; Mrs. Gina Biju Justus</p>
             <p class="small">
               “JUSLITH”, NCRA 108, Nanthencode, Trivandrum
             </p>
@@ -152,8 +150,8 @@
         </div>
         <div class="story-card reveal">
           <img
-            src="assets/couple-art-front-approved.webp"
-            alt="Watercolour portrait of Paul Daniel and Joanne Biju"
+            src="assets/engagement-illustrated.webp"
+            alt="Illustrated engagement portrait of Paul Daniel and Joanne Biju"
           />
           <div>
             <h3>Paul Daniel and Joanne Biju</h3>
@@ -172,10 +170,10 @@
               src="assets/bride-art-joanne-v3.webp"
               alt="Watercolour portrait of Joanne Biju as a Christian bride"
             /></button
-          ><button data-image="assets/bible-rings-art.webp">
+          ><button data-image="assets/engagement-hands.webp">
             <img
-              src="assets/bible-rings-art.webp"
-              alt="Watercolour wedding rings and Bible"
+              src="assets/engagement-hands.webp"
+              alt="Paul and Joanne engagement ring and attire detail"
             /></button
           ><button data-image="assets/couple-art-side-approved-cropped.webp">
             <img
@@ -270,14 +268,16 @@
       </section>
 
       <footer>
-        <p>With Love</p>
-        <h3>Paul Daniel & Joanne Biju</h3>
-        <span>♥</span>
-        <p>29th December 2026 · 11:00 AM</p>
-        <p class="footer-family">
-          Lynn Blesson &amp; Blesson B Mathew, Liny Daniel, Ashley Daniel.
-        </p>
-        <small>#PaulWedsJoanne</small>
+        <div class="closing-verse">
+          <p>“Be completely humble and gentle; be patient, bearing with one another in love.”</p>
+          <small>Ephesians 4:2</small>
+        </div>
+        <div class="closing-love">
+          <span class="closing-pill">♡ &nbsp; With Love</span>
+          <h3>Lynn Blesson, Blesson B Mathew,<br />Liny Daniel and Ashley Daniel</h3>
+          <p>We await your presence and prayers as they become one in Christ.</p>
+          <small>What God hath joined together, let not man put asunder — Mark 10:9</small>
+        </div>
       </footer>
       <a class="whatsapp-float" href="https://wa.me/971501432022?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20Paul%20and%20Joanne%27s%20wedding." target="_blank" rel="noreferrer" aria-label="Message the wedding family on WhatsApp">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.3 4.7A15.8 15.8 0 0 0 2.5 23.8L.3 31.7l8.1-2.1A15.8 15.8 0 0 0 31.8 16 15.7 15.7 0 0 0 27.3 4.7Zm-11.2 24a13 13 0 0 1-6.6-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5a13 13 0 1 1 10.9 6Zm7.1-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-2.3-1.1-3.8-2.1-5.3-4.7-.4-.7.4-.7 1.1-2.2.1-.3 0-.5-.1-.7l-1.2-2.9c-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 1.5-.2 2.3-1 2.6-1.9.3-.9.3-1.7.2-1.9-.1-.2-.5-.3-.9-.5Z"/></svg>
