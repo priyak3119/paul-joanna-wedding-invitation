@@ -107,10 +107,10 @@ function initScratch() {
   canvas.height = rect.height * ratio;
   ctx.scale(ratio, ratio);
   const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
-  gradient.addColorStop(0, "#f3d8dc");
-  gradient.addColorStop(0.36, "#d9a4ad");
-  gradient.addColorStop(0.66, "#c48794");
-  gradient.addColorStop(1, "#efd0d5");
+  gradient.addColorStop(0, "#84394f");
+  gradient.addColorStop(0.36, "#d5a1b1");
+  gradient.addColorStop(0.66, "#b86d87");
+  gradient.addColorStop(1, "#783249");
   const heartX = rect.width / 2;
   const heartY = rect.height * 0.6;
   ctx.beginPath();
@@ -133,12 +133,34 @@ function initScratch() {
     rect.height * 0.42,
     rect.width * 0.62,
   );
-  sheen.addColorStop(0, "#ffffff24");
-  sheen.addColorStop(0.52, "#ffffff08");
+  sheen.addColorStop(0, "#fff3f0bb");
+  sheen.addColorStop(0.52, "#f7d7e047");
   sheen.addColorStop(1, "#0000001f");
   ctx.fillStyle = sheen;
   ctx.fillRect(0, 0, rect.width, rect.height);
   ctx.restore();
+  // Fine, irregular metallic grain stays clipped to the scratch coating.
+  ctx.save();
+  ctx.globalCompositeOperation = "source-atop";
+  let glitterSeed = 7319;
+  const grainRandom = () => {
+    glitterSeed = (Math.imul(glitterSeed, 1664525) + 1013904223) >>> 0;
+    return glitterSeed / 4294967296;
+  };
+  // Dense rose foil flecks with occasional brighter facets, like the reference.
+  for (let i = 0; i < 26000; i++) {
+    const x = grainRandom() * rect.width;
+    const y = grainRandom() * rect.height;
+    const facet = grainRandom();
+    const size = facet > 0.985 ? 1.7 : 0.3 + grainRandom() * 0.65;
+    ctx.fillStyle = facet > 0.985 ? "#fff0edde"
+      : facet > 0.50 ? "#ffe1e78c" : "#702b454d";
+    ctx.beginPath();
+    ctx.ellipse(x, y, size, size * 0.65, grainRandom() * Math.PI, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+  const originalMask = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
   ctx.globalCompositeOperation = "destination-out";
   let drawing = false,
     moves = 0,
@@ -184,11 +206,12 @@ function initScratch() {
       sampled = 0;
     for (let y = 0; y < canvas.height; y += step) {
       for (let x = 0; x < canvas.width; x += step) {
+        if (originalMask[y * stride + x * 4 + 3] < 35) continue;
         sampled++;
         if (pixels[y * stride + x * 4 + 3] < 35) clear++;
       }
     }
-    return clear / sampled > 0.34;
+    return sampled > 0 && clear / sampled > 0.34;
   };
   const pointerPosition = (e) => {
     const bounds = canvas.getBoundingClientRect();
