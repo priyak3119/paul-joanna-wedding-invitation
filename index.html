@@ -1,296 +1,153 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#2a6f6f" />
-    <meta
-      name="description"
-      content="Christian wedding invitation for Paul Daniel and Joanne Biju"
-    />
-    <title>Paul Daniel & Joanne Biju | Wedding Invitation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="locked">
-    <div class="entry" id="entry">
-      <div class="entry-curtain entry-curtain--left" aria-hidden="true"></div>
-      <div class="entry-curtain entry-curtain--right" aria-hidden="true"></div>
-      <div class="entry-stars" aria-hidden="true"></div>
-      <span class="spark spark--one">✦</span
-      ><span class="spark spark--two">✦</span>
-      <button class="envelope" id="openInvitation" aria-label="Open invitation">
-        <img
-          src="assets/embossed-envelope.webp"
-          alt="Dusty rose embossed wedding envelope with a gold wax seal"
-        />
-        <span class="wax-seal" aria-hidden="true">P <i>&amp;</i> J</span>
-      </button>
-      <p class="entry-note">Tap the seal to open</p>
-    </div>
-
-    <button class="music" id="musicButton" aria-label="Play background music">
-      ♪
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#4c1020" />
+  <meta name="description" content="Christian wedding invitation for Paul Daniel and Joanne Biju" />
+  <title>Paul Daniel & Joanne Biju | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260912-preview27" />
+</head>
+<body class="locked">
+  <section class="entry" id="entry" aria-label="Wedding invitation cover">
+    <div class="entry-glow"></div>
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+    <div class="entry-stars" id="entryStars"></div>
+    <button class="envelope" id="openInvitation" aria-label="Open invitation">
+      <img src="assets/embossed-envelope.webp" alt="Antique gold embossed wedding envelope with burgundy monogram seal" />
+      <span class="seal"><b>P</b><i>&amp;</i><b>J</b></span>
     </button>
-    <main id="invitation" hidden>
-      <div class="motion-layer" id="motionLayer" aria-hidden="true"></div>
-      <section class="save-date red-section full-screen">
-        <div class="petals" aria-hidden="true">✦　·　✦</div>
-        <div class="save-card reveal">
-          <div class="round-logo">P <i>&</i> J</div>
-          <p class="kicker">Save the Date</p>
-          <p class="script-line">For the wedding celebration of</p>
-          <p class="gold-couple-names"><strong>Paul Daniel</strong><i>&amp;</i><strong>Joanne Biju</strong></p>
-          <div class="reveal-card" id="revealCard">
-            <div class="scratch-heart" aria-hidden="true"></div>
-            <canvas
-              id="scratchCanvas"
-              role="button"
-              tabindex="0"
-              aria-label="Scratch to reveal the wedding date"
-            ></canvas>
-            <div class="revealed">
-              <span>Save the Date</span><strong>29th December 2026</strong
-              ><small>Our day, revealed with joy</small>
-            </div>
-            <div class="reveal-burst" id="revealBurst" aria-hidden="true"></div>
-            <p class="scratch-label"><b>Scratch this heart</b><em>to reveal our wedding date</em><span class="swipe-cue" aria-hidden="true">↔</span></p>
-          </div>
-          <p class="scratch-hint">Rub across the heart with your finger or mouse.</p>
-          <p class="sr-only" id="revealStatus" aria-live="polite"></p>
-          <div class="countdown" aria-label="Wedding countdown" hidden>
-            <div><strong id="days">000</strong><span>Days</span></div>
-            <div><strong id="hours">00</strong><span>Hours</span></div>
-            <div><strong id="minutes">00</strong><span>Minutes</span></div>
-            <div><strong id="seconds">00</strong><span>Seconds</span></div>
-          </div>
-        </div>
-      </section>
+  </section>
 
-      <section class="blessing red-section full-screen">
-        <div class="blessing-card reveal">
-          <h2>In the Name of the Father,<br />the Son and the Holy Spirit</h2>
-          <blockquote>
-            “Therefore what God has joined together, let no one separate.”
-          </blockquote>
-          <p class="citation">Mark 10:9</p>
-          <p>
-            With grateful hearts, we warmly invite you to join our most
-            cherished celebration and bless us as we begin a lifetime together.
-          </p>
-        </div>
-        <div class="family-intro reveal">
-          <p class="family-kicker">Together with their families</p>
-          <p class="family-invitation">We joyfully invite you to the sacred union of</p>
-          <div class="family-person">
-            <h1>Paul Daniel</h1>
-            <p>S/o Mr. Daniel Joseph Simpson &amp; Mrs. Saly Daniel</p>
-            <p class="small">
-              “Mullassery House”, Kadapakkada, Kollam
-            </p>
+  <button class="music-control" id="musicButton" aria-label="Play background music">♪</button>
+
+  <main id="invitation" hidden>
+    <section class="hero section-full">
+      <div class="ornament top">✦</div>
+      <div class="monogram">P <i>&amp;</i> J</div>
+      <p class="eyebrow">Save the Date</p>
+      <p class="script-kicker">For the wedding celebration of</p>
+      <h1 class="couple-name"><span>Paul Daniel</span><em>&amp;</em><span>Joanne Biju</span></h1>
+
+      <div class="scratch-wrap">
+        <div class="scratch-card" id="scratchCard">
+          <div class="date-reveal">
+            <small>Save the Date</small>
+            <strong>29th December 2026</strong>
+            <span>11:00 AM · Kollam</span>
           </div>
-          <span class="weds">&amp;</span>
-          <div class="family-person">
-            <h1>Joanne Biju</h1>
-            <p>D/o Dr. Biju Justus &amp; Mrs. Gina Biju Justus</p>
-            <p class="small">
-              “JUSLITH”, NCRA 108, Nanthencode, Trivandrum
-            </p>
+          <canvas id="scratchCanvas" width="700" height="420" aria-label="Scratch to reveal the wedding date"></canvas>
+          <div class="scratch-copy" id="scratchCopy">
+            <b>Scratch this heart</b>
+            <span>to reveal our wedding date</span>
+            <em>↔</em>
           </div>
         </div>
-        <img
-          class="family-image"
-          src="assets/bible-rings-art.webp"
-          alt="Watercolour illustration of wedding rings beside the Holy Bible"
-        />
-      </section>
+        <div class="countdown" id="countdown" hidden>
+          <div><strong id="days">000</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+      </div>
+    </section>
 
-      <section class="events red-section" id="events">
-        <div class="section-heading reveal">
-          <h2>Events Schedule</h2>
-          <p>#PaulWedsJoanne</p>
-          <span>❀</span>
-        </div>
-        <div class="events-card">
-          <article class="event-row reveal">
-            <div class="event-copy">
-              <span class="event-number">Holy Matrimony</span>
-              <p>
-                The sacred covenant, witnessed before God and our loved ones.
-              </p>
-              <h3>Wedding Celebration</h3>
-              <strong>29th December 2026</strong>
-              <p>
-                ✦ Wedding service <b>at 11:00 AM</b><br />✦ CSI Convention
-                Center, Chinnakada, Kollam
-              </p>
-              <a
-                class="gold-button"
-                href="https://www.google.com/maps/search/?api=1&amp;query=CSI+Convention+Center+Chinnakada+Kollam"
-                target="_blank"
-                rel="noreferrer"
-                >View Wedding Location</a
-              >
-            </div>
-            <img
-              src="assets/engagement-hands-final.webp"
-              alt="Paul and Joanne engagement ring and attire detail"
-            />
-          </article>
-        </div>
-      </section>
+    <section class="faith-section panel-section">
+      <div class="glass-card reveal-on-scroll">
+        <p class="cross">✝</p>
+        <h2>In the Name of the Father,<br>the Son and the Holy Spirit</h2>
+        <blockquote>“Therefore what God has joined together, let no one separate.”</blockquote>
+        <p class="verse">Mark 10:9</p>
+        <p>With grateful hearts, we warmly invite you to join our cherished celebration and bless us as we begin a lifetime together.</p>
+      </div>
 
-      <section class="moments red-section">
-        <div class="section-heading reveal">
-          <h2>Our Moments</h2>
-          <p>Glimpses of Togetherness</p>
-          <span>❀</span>
+      <div class="family-card reveal-on-scroll">
+        <p class="eyebrow">Together with their families</p>
+        <p class="soft-copy">We joyfully invite you to the sacred union of</p>
+        <div class="family-person">
+          <h3>Paul Daniel</h3>
+          <p>S/o Mr. Daniel Joseph Simpson &amp; Mrs. Saly Daniel</p>
+          <small>“Mullassery House”, Kadapakkada, Kollam</small>
         </div>
-        <div class="story-card reveal">
-          <img
-            src="assets/engagement-illustrated.webp"
-            alt="Illustrated engagement portrait of Paul Daniel and Joanne Biju"
-          />
-          <div>
-            <h3>Paul Daniel and Joanne Biju</h3>
-            <p>
-              Paul’s quiet kindness and Joanne’s warm, grounded spirit found
-              each other through a friendship that soon felt like home. With
-              prayer, the blessing of both families and the grace of God, their
-              journey unfolded naturally—two lives drawn together by faith,
-              laughter and a shared hope for the future.
-            </p>
-          </div>
+        <div class="amp">&amp;</div>
+        <div class="family-person">
+          <h3>Joanne Biju</h3>
+          <p>D/o Dr. Biju Justus &amp; Mrs. Gina Biju Justus</p>
+          <small>“JUSLITH”, NCRA 108, Nanthencode, Trivandrum</small>
         </div>
-      </section>
+      </div>
 
-      <section class="rsvp red-section" id="rsvp">
-        <div class="presence reveal">
-          <h2>Awaiting Your Noble Presence</h2>
-          <span>❀</span>
-          <p>
-            Join us as we celebrate love, laughter and the beginning of forever
-            together.
-          </p>
-        </div>
-        <form class="rsvp-form reveal" id="rsvpForm">
-          <span class="form-leaf form-leaf--one" aria-hidden="true">🌿</span
-          ><span class="form-flower" aria-hidden="true">🌼</span>
-          <div class="round-logo">P <i>&</i> J</div>
-          <h3>Share Your Response</h3>
-          <p>Kindly share your response with the groom’s family</p>
-          <label
-            >Your Name<span class="field-wrap"
-              ><input
-                name="name"
-                required
-                placeholder="Enter your full name"
-              /><span aria-hidden="true">🌿</span></span
-            ></label
-          >
-          <fieldset>
-            <legend>Attendance</legend>
-            <input type="hidden" name="attendance" id="attendanceValue" value="Attending" />
-            <div class="choice-row" role="group" aria-label="Choose attendance response">
-              <button class="attendance-choice is-selected" type="button" data-attendance="Attending" aria-pressed="true">
-                <span class="choice-icon" aria-hidden="true">✧</span><b>Attending</b>
-              </button>
-              <button class="attendance-choice" type="button" data-attendance="Wishes Online" aria-pressed="false">
-                <span class="choice-icon" aria-hidden="true">♧</span><b>Wishes Online</b>
-              </button>
-            </div>
-          </fieldset>
-          <div class="rsvp-panel is-active" id="attendingPanel" data-rsvp-panel="Attending">
-            <label>Number of Guests<select name="guests">
-                <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option>
-                <option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option>
-              </select></label>
-            <fieldset>
-              <legend>Events Attending</legend>
-              <label class="check"><input type="checkbox" name="event" value="Wedding Celebration" /><span><b>Wedding Celebration</b><small>29th December 2026 · 11:00 AM</small></span></label>
-            </fieldset>
-            <label>Congratulations Message<textarea name="message" rows="4" placeholder="Write a message for the couple..."></textarea></label>
-          </div>
-          <div class="rsvp-panel" id="wishesPanel" data-rsvp-panel="Wishes Online" hidden>
-            <label>Send Your Warm Wishes<textarea name="online_wish" rows="5" placeholder="Write your blessings and wishes here..." disabled></textarea></label>
-            <p class="online-note"><span aria-hidden="true">♡</span> Your blessing will mean the world to the couple.</p>
-          </div>
-          <button class="submit-button">Send Response on WhatsApp</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
-      </section>
+      <img class="wide-art reveal-on-scroll" src="assets/bible-rings-art.webp" alt="Wedding rings beside the Holy Bible" />
+    </section>
 
-      <section class="venues red-section">
-        <div class="section-heading reveal">
-          <p>Where We Celebrate</p>
-          <h2>Venue & Directions</h2>
-          <span>❀</span>
+    <section class="schedule panel-section">
+      <div class="section-title reveal-on-scroll"><p>Our Celebration</p><h2>Events Schedule</h2><span>✦</span></div>
+      <article class="schedule-card reveal-on-scroll">
+        <div class="schedule-copy">
+          <small>Holy Matrimony</small>
+          <h3>Wedding Celebration</h3>
+          <strong>29th December 2026</strong>
+          <p>Wedding service at <b>11:00 AM</b><br>CSI Convention Center, Chinnakada, Kollam</p>
+          <a class="gold-btn" href="https://www.google.com/maps/search/?api=1&query=CSI+Convention+Center+Chinnakada+Kollam" target="_blank" rel="noreferrer">View Wedding Location</a>
         </div>
-        <div class="venue-grid">
-          <article class="venue-card reveal">
-            <span>Wedding Venue</span>
-            <h3>CSI Convention Center</h3>
-            <p>📍 Quilon Shenkotta Road, near Craven LMS High School,<br />behind 2nd Terminal of Railway Station,<br />Chinnakada, Kollam, Kerala</p>
-            <iframe
-              title="CSI Convention Center location map"
-              loading="lazy"
-              src="https://www.google.com/maps?q=CSI+Convention+Center+Chinnakada+Kollam&output=embed"
-            ></iframe
-            ><a
-              class="gold-button"
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.google.com/maps/search/?api=1&amp;query=CSI+Convention+Center+Chinnakada+Kollam"
-              >Navigate to Wedding</a
-            >
-          </article>
-        </div>
-      </section>
+        <img src="assets/engagement-hands-final.webp" alt="Paul and Joanne engagement detail" />
+      </article>
+    </section>
 
-      <footer>
-        <div class="closing-verse">
-          <p>“Be completely humble and gentle; be patient, bearing with one another in love.”</p>
-          <small>Ephesians 4:2</small>
+    <section class="moments panel-section">
+      <div class="section-title reveal-on-scroll"><p>Glimpses of Togetherness</p><h2>Our Moments</h2><span>✦</span></div>
+      <article class="moment-card reveal-on-scroll">
+        <img src="assets/couple-art-front-approved.webp" alt="Watercolor wedding portrait of Paul Daniel and Joanne Biju" />
+        <div>
+          <h3>Paul Daniel &amp; Joanne Biju</h3>
+          <p>Two lives drawn together by faith, prayer, laughter and the blessing of family. With grateful hearts, they look forward to beginning their forever together in Christ.</p>
         </div>
-        <div class="closing-love">
-          <span class="closing-pill">♡ &nbsp; With Love</span>
-          <h3>Lynn Blesson, Blesson B Mathew,<br />Liny Daniel and Ashley Daniel</h3>
-          <p>We await your presence and prayers as they become one in Christ.</p>
-          <small>What God hath joined together, let not man put asunder — Mark 10:9</small>
-        </div>
-      </footer>
-      <a class="whatsapp-float" href="https://wa.me/971501432022?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20Paul%20and%20Joanne%27s%20wedding." target="_blank" rel="noreferrer" aria-label="Message the wedding family on WhatsApp">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.3 4.7A15.8 15.8 0 0 0 2.5 23.8L.3 31.7l8.1-2.1A15.8 15.8 0 0 0 31.8 16 15.7 15.7 0 0 0 27.3 4.7Zm-11.2 24a13 13 0 0 1-6.6-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5a13 13 0 1 1 10.9 6Zm7.1-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-2.3-1.1-3.8-2.1-5.3-4.7-.4-.7.4-.7 1.1-2.2.1-.3 0-.5-.1-.7l-1.2-2.9c-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 1.5-.2 2.3-1 2.6-1.9.3-.9.3-1.7.2-1.9-.1-.2-.5-.3-.9-.5Z"/></svg>
-      </a>
-    </main>
-    <dialog class="lightbox" id="lightbox">
-      <button aria-label="Close image">×</button
-      ><img src="assets/couple-art-front-approved.webp" alt="Enlarged wedding illustration of Paul Daniel and Joanne Biju" />
-    </dialog>
-    <dialog class="success-dialog" id="successDialog">
-      <div class="success-mark" aria-hidden="true">✓</div>
-      <p class="success-kicker">Thank you</p>
-      <h2>Response submitted successfully</h2>
-      <p>Your RSVP details are ready in WhatsApp. Please tap send there to share them with the family.</p>
-      <button type="button" id="closeSuccess">Done</button>
-    </dialog>
-    <aside class="youtube-music" id="youtubeMusic" aria-label="Wedding music player">
-      <p><span>Now Playing</span>A Love Written by God</p>
-      <iframe
-        id="youtubeMusicPlayer"
-        title="A Love Written by God — Christian Wedding Playlist"
-        width="240"
-        height="135"
-        src="https://www.youtube-nocookie.com/embed/lBjz1NaqATs?enablejsapi=1&amp;playsinline=1&amp;controls=1&amp;rel=0&amp;loop=1&amp;playlist=lBjz1NaqATs"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
-    </aside>
-    <script src="script.js"></script>
-  </body>
+      </article>
+    </section>
+
+    <section class="rsvp panel-section" id="rsvp">
+      <div class="section-title reveal-on-scroll"><p>Your Presence Is Our Blessing</p><h2>RSVP</h2><span>✦</span></div>
+      <form class="rsvp-card reveal-on-scroll" id="rsvpForm">
+        <div class="mini-monogram">P <i>&amp;</i> J</div>
+        <h3>Share Your Response</h3>
+        <p>Kindly share your response with the family</p>
+        <label>Your Name<input name="name" required placeholder="Enter your full name" /></label>
+        <label>Attendance<select name="attendance" id="attendance"><option>Attending</option><option>Wishes Online</option></select></label>
+        <label id="guestField">Number of Guests<select name="guests"><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option></select></label>
+        <label>Your Message<textarea name="message" rows="4" placeholder="Write your wishes for the couple..."></textarea></label>
+        <button class="submit-btn" type="submit">Send Response on WhatsApp</button>
+      </form>
+    </section>
+
+    <section class="venue panel-section">
+      <div class="section-title reveal-on-scroll"><p>Where We Celebrate</p><h2>Venue &amp; Directions</h2><span>✦</span></div>
+      <article class="venue-card reveal-on-scroll">
+        <small>Wedding Venue</small>
+        <h3>CSI Convention Center</h3>
+        <p>Quilon Shenkotta Road, near Craven LMS High School,<br>behind 2nd Terminal of Railway Station,<br>Chinnakada, Kollam, Kerala</p>
+        <iframe title="CSI Convention Center map" loading="lazy" src="https://www.google.com/maps?q=CSI+Convention+Center+Chinnakada+Kollam&output=embed"></iframe>
+        <a class="gold-btn" href="https://www.google.com/maps/search/?api=1&query=CSI+Convention+Center+Chinnakada+Kollam" target="_blank" rel="noreferrer">Navigate to Wedding</a>
+      </article>
+    </section>
+
+    <footer>
+      <p class="footer-verse">“Be completely humble and gentle; be patient, bearing with one another in love.”</p>
+      <small>Ephesians 4:2</small>
+      <div class="footer-love">With Love</div>
+      <h3>Lynn Blesson, Blesson B Mathew,<br>Liny Daniel and Ashley Daniel</h3>
+      <p>We await your presence and prayers as they become one in Christ.</p>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/971501432022?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20Paul%20and%20Joanne%27s%20wedding." target="_blank" rel="noreferrer" aria-label="Message wedding family on WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.3 4.7A15.8 15.8 0 0 0 2.5 23.8L.3 31.7l8.1-2.1A15.8 15.8 0 0 0 31.8 16 15.7 15.7 0 0 0 27.3 4.7Zm-11.2 24a13 13 0 0 1-6.6-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5a13 13 0 1 1 10.9 6Zm7.1-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-2.3-1.1-3.8-2.1-5.3-4.7-.4-.7.4-.7 1.1-2.2.1-.3 0-.5-.1-.7l-1.2-2.9c-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 1.5-.2 2.3-1 2.6-1.9.3-.9.3-1.7.2-1.9-.1-.2-.5-.3-.9-.5Z"/></svg>
+    </a>
+  </main>
+
+  <audio id="bgMusic" preload="none" loop src="assets/background-music.mp3"></audio>
+  <script src="script.js?v=20260912-preview27"></script>
+</body>
 </html>
