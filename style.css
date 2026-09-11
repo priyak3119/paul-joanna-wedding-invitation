@@ -25,9 +25,7 @@ html, body { background: var(--preview-burgundy-deep); }
   transition-duration: .56s, .34s, .34s !important;
   filter: drop-shadow(0 24px 45px rgba(20,0,5,.34));
 }
-.envelope img {
-  filter: saturate(.86) sepia(.08) contrast(1.02) brightness(1.02);
-}
+.envelope img { filter: saturate(.86) sepia(.08) contrast(1.02) brightness(1.02); }
 .wax-seal {
   background: radial-gradient(circle at 35% 28%, #8b3048 0%, #64182c 48%, #45101d 100%) !important;
   color: var(--preview-gold-light) !important;
@@ -36,12 +34,10 @@ html, body { background: var(--preview-burgundy-deep); }
   transition-duration: .24s, .22s !important;
 }
 .entry-stars span { animation-duration: .62s !important; }
-
-/* Keep the opening refined rather than glitter-heavy. */
 .spark { opacity: .55 !important; }
 .entry.opening .spark { animation-duration: .58s !important; }
 
-/* Latest preview keeps the music functional but not as a visible YouTube video. */
+/* Keep music functional without displaying a YouTube video. */
 .youtube-music {
   position: fixed !important;
   width: 1px !important;
@@ -71,7 +67,6 @@ html, body { background: var(--preview-burgundy-deep); }
 }
 .whatsapp-float svg { width: 29px !important; height: 29px !important; fill: #fff !important; }
 
-/* Use the approved couple artwork more prominently and remove side whitespace. */
 .story-card { overflow: hidden; }
 .story-card > img {
   width: 100% !important;
@@ -80,11 +75,11 @@ html, body { background: var(--preview-burgundy-deep); }
   object-position: center 30% !important;
 }
 
-/* Once the scratch reveal completes, do not leave prompt/gesture graphics behind. */
-.reveal-card.revealed-state .scratch-label,
-.reveal-card.revealed-state .scratch-hint,
-.reveal-card.is-revealed .scratch-label,
-.reveal-card.is-revealed .scratch-hint { display: none !important; }
+/* Once the date is revealed, scratch instructions/gesture cues stay gone. */
+.reveal-card.revealed-celebration .scratch-label,
+.reveal-card.scratched.revealed-celebration .scratch-label { display: none !important; }
+.reveal-card.revealed-celebration + .scratch-hint,
+.reveal-card.scratched.revealed-celebration + .scratch-hint { display: none !important; }
 
 @media (max-width: 640px) {
   .entry-curtain { transition-duration: .40s !important; }
