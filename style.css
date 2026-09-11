@@ -463,3 +463,19 @@ p,blockquote,label,legend,input,select,textarea,.gold-button{font-family:"Cormor
 @media (min-width: 761px) {
   .save-card { margin-inline: auto; }
 }
+
+/* Clear instructions belong on the interactive heart itself. */
+.save-date { place-items:center; }
+.save-card { margin-inline:auto; }
+.save-card .scratch-label {
+  inset:auto;left:50%;top:60%;width:190px;
+  transform:translate(-50%,-50%);display:grid;gap:6px;
+  color:#452532;text-shadow:none;font:600 1rem/1.25 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:0;text-transform:none;animation:none;
+}
+.save-card .scratch-label b { font-size:1.25rem; }
+.save-card .scratch-label em { font-size:1rem;font-weight:500; }
+.save-card .scratch-label::after { display:none; }
+.save-card .scratch-label .swipe-cue { display:block;margin:2px 0 0;font-size:1.6rem;animation:swipe-guide 2.8s ease-in-out infinite; }
+@keyframes swipe-guide { 0%,100% { transform:translateX(-12px); } 50% { transform:translateX(12px); } }
+@media(prefers-reduced-motion:reduce) { .save-card .scratch-label .swipe-cue { animation:none; } }
