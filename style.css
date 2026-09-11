@@ -1,8 +1,93 @@
-@import url("style-original.css?v=20260912");
+@import url("style-original.css?v=20260912b");
 
-/* Latest invitation polish: keep the opening clean and make the seal transition feel immediate. */
+/* Latest ChatGPT preview alignment — burgundy, antique gold, fast professional opening. */
+:root {
+  --preview-burgundy: #5f1728;
+  --preview-burgundy-deep: #3f0f1c;
+  --preview-burgundy-soft: #7b2b3f;
+  --preview-gold: #caa56a;
+  --preview-gold-light: #ead7aa;
+  --preview-ivory: #fbf5ea;
+}
+
+html, body { background: var(--preview-burgundy-deep); }
+.entry {
+  background:
+    radial-gradient(circle at 50% 34%, rgba(202,165,106,.14), transparent 34%),
+    linear-gradient(145deg, #3b0d19 0%, #681d31 52%, #3b0d19 100%) !important;
+}
 .entry-note { display: none !important; }
-.entry-curtain { transition-duration: .62s !important; }
-.envelope { transition-duration: .72s, .42s, .42s !important; }
-.wax-seal { transition-duration: .30s, .26s !important; }
-.entry-stars span { animation-duration: .72s !important; }
+.entry-curtain {
+  background: linear-gradient(90deg, #49101f, #6a1f34 55%, #43101d) !important;
+  transition-duration: .46s !important;
+}
+.envelope {
+  transition-duration: .56s, .34s, .34s !important;
+  filter: drop-shadow(0 24px 45px rgba(20,0,5,.34));
+}
+.envelope img {
+  filter: saturate(.86) sepia(.08) contrast(1.02) brightness(1.02);
+}
+.wax-seal {
+  background: radial-gradient(circle at 35% 28%, #8b3048 0%, #64182c 48%, #45101d 100%) !important;
+  color: var(--preview-gold-light) !important;
+  border: 1px solid rgba(234,215,170,.72) !important;
+  box-shadow: 0 8px 22px rgba(33,0,9,.34), inset 0 0 0 2px rgba(202,165,106,.18) !important;
+  transition-duration: .24s, .22s !important;
+}
+.entry-stars span { animation-duration: .62s !important; }
+
+/* Keep the opening refined rather than glitter-heavy. */
+.spark { opacity: .55 !important; }
+.entry.opening .spark { animation-duration: .58s !important; }
+
+/* Latest preview keeps the music functional but not as a visible YouTube video. */
+.youtube-music {
+  position: fixed !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  inset: auto !important;
+  left: -9999px !important;
+}
+
+/* Right-side WhatsApp icon: green, clean, no white card/background. */
+.whatsapp-float {
+  position: fixed !important;
+  right: 18px !important;
+  left: auto !important;
+  bottom: 22px !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background: #25d366 !important;
+  border: 0 !important;
+  box-shadow: 0 9px 24px rgba(0,0,0,.24) !important;
+  display: grid !important;
+  place-items: center !important;
+  z-index: 50 !important;
+}
+.whatsapp-float svg { width: 29px !important; height: 29px !important; fill: #fff !important; }
+
+/* Use the approved couple artwork more prominently and remove side whitespace. */
+.story-card { overflow: hidden; }
+.story-card > img {
+  width: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+}
+
+/* Once the scratch reveal completes, do not leave prompt/gesture graphics behind. */
+.reveal-card.revealed-state .scratch-label,
+.reveal-card.revealed-state .scratch-hint,
+.reveal-card.is-revealed .scratch-label,
+.reveal-card.is-revealed .scratch-hint { display: none !important; }
+
+@media (max-width: 640px) {
+  .entry-curtain { transition-duration: .40s !important; }
+  .envelope { transition-duration: .50s, .30s, .30s !important; }
+  .whatsapp-float { right: 14px !important; bottom: 18px !important; width: 50px !important; height: 50px !important; }
+}
