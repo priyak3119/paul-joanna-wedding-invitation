@@ -1,0 +1,2 @@
+Redeploy trigger: 2026-09-12 02:21 Asia/Dubai
+Latest invitation opening update should deploy from main.
