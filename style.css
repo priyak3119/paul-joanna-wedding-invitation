@@ -623,3 +623,15 @@ body{background:#590b12}
 .motion-layer .falling-petal{color:#dec391}
 .motion-layer .butterfly{filter:sepia(1) saturate(.45) brightness(1.15)}
 @media(prefers-reduced-motion:reduce){.envelope-flap,.envelope>img,.envelope::before{transition:none}.entry.revealing .envelope{transform:none}}
+
+
+/* Compact spacing in the Save the Date section. */
+.save-date{min-height:0;padding:24px 16px 28px}
+.save-card{padding:0}
+.save-card .round-logo{margin:0 auto 12px}
+.save-card .kicker{margin:0;line-height:1.2}
+.save-card .script-line{margin:8px 0 12px;line-height:1.4}
+.save-card .gold-couple-names{margin:10px 0 0;gap:6px;line-height:1.2}
+.save-card .reveal-card{margin-block:0}
+.save-card .scratch-hint{margin:0;line-height:1.4}
+.save-card .countdown{margin-top:16px}
