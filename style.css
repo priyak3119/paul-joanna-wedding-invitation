@@ -635,3 +635,15 @@ body{background:#590b12}
 .save-card .reveal-card{margin-block:0}
 .save-card .scratch-hint{margin:0;line-height:1.4}
 .save-card .countdown{margin-top:16px}
+
+
+/* Refined portrait presentation and reliable venue rendering on mobile. */
+.moments .story-card{padding:6px;background:#fff5e6;border-radius:22px;box-shadow:0 12px 32px #26030730;margin-bottom:28px}
+.moments .story-card img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:16px}
+.venue-reference-photo{background-image:url("assets/venue-reference.jpg");background-repeat:no-repeat;background-size:111.83% auto;background-position:50% 62.4%;border:1px solid #d4b789;border-radius:22px}
+.moments .section-heading,.venues .section-heading{margin-bottom:28px}
+.moments,.venues{padding-block:56px}
+.venue-details{border:1px solid #d4b789;border-radius:22px}
+.venue-details h3{line-height:1.25}
+.music.playing{animation:none}
+@media(max-width:760px){.moments,.venues{padding:40px 16px}.venue-details{padding:24px}.wedding-palette{margin-top:28px}}
