@@ -647,3 +647,8 @@ body{background:#590b12}
 .venue-details h3{line-height:1.25}
 .music.playing{animation:none}
 @media(max-width:760px){.moments,.venues{padding:40px 16px}.venue-details{padding:24px}.wedding-palette{margin-top:28px}}
+
+
+/* Load the repository-hosted venue photograph as a visible image element. */
+.venue-reference-photo{background-image:none;aspect-ratio:634/440;position:relative;overflow:hidden}
+.venue-reference-photo img.venue-photo{position:absolute;inset:0;display:block;width:100%;max-width:100%;height:100%;object-fit:cover;object-position:50% 62.4%;transform:scale(1.1183)}
