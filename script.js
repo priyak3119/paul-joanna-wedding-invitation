@@ -327,3 +327,74 @@ lightbox
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) lightbox.close();
 });
+const attendanceValue = document.getElementById("attendanceValue"),
+  attendanceButtons = document.querySelectorAll("[data-attendance]"),
+  rsvpPanels = document.querySelectorAll("[data-rsvp-panel]");
+attendanceButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    const selection = button.dataset.attendance;
+    attendanceValue.value = selection;
+    attendanceButtons.forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle("is-selected", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
+    rsvpPanels.forEach((panel) => {
+      const selected = panel.dataset.rsvpPanel === selection;
+      panel.hidden = !selected;
+      panel.classList.toggle("is-active", selected);
+      panel.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.disabled = !selected;
+      });
+    });
+    const activePanel = document.querySelector(`[data-rsvp-panel="${selection}"]`);
+    activePanel.querySelector("textarea, select")?.focus({ preventScroll: true });
+  }),
+);
+const rsvpForm = document.getElementById("rsvpForm"),
+  formStatus = document.getElementById("formStatus"),
+  successDialog = document.getElementById("successDialog");
+function selectAttendance(selection = "Attending") {
+  document.querySelector(`[data-attendance="${selection}"]`)?.click();
+}
+rsvpForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const button = rsvpForm.querySelector(".submit-button");
+  if (button.disabled) return;
+  const data = new FormData(rsvpForm);
+  const attending = data.get("attendance") === "Attending";
+  button.disabled = true;
+  button.textContent = "Sending…";
+  formStatus.textContent = "";
+  try {
+    const response = await fetch("/api/wedding-rsvp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.get("name"),
+        attendance: data.get("attendance"),
+        guests: attending ? parseInt(data.get("guests"), 10) : null,
+        event: attending && data.getAll("event").includes("Wedding Celebration"),
+        message: data.get(attending ? "message" : "online_wish") || ""
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || !result.ok) throw new Error("Submission not confirmed");
+    rsvpForm.reset();
+    selectAttendance("Attending");
+    formStatus.textContent = "Response submitted successfully.";
+    successDialog.showModal();
+  } catch {
+    formStatus.textContent = "We couldn’t confirm your response. Please try again shortly. Your details are still here.";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Send Response";
+  }
+});
+document.getElementById("closeSuccess").addEventListener("click", () => {
+  successDialog.close();
+  rsvpForm.querySelector('[name="name"]').focus();
+});
+successDialog.addEventListener("click", (event) => {
+  if (event.target === successDialog) successDialog.close();
+});
