@@ -164,51 +164,13 @@
             together.
           </p>
         </div>
-        <form class="rsvp-form reveal" id="rsvpForm">
-          <span class="form-leaf form-leaf--one" aria-hidden="true">🌿</span
-          ><span class="form-flower" aria-hidden="true">🌼</span>
-          <div class="round-logo">P <i>&</i> J</div>
+        <div class="rsvp-form reveal" id="rsvpGoogleForm">
+          <div class="round-logo">P <i>&amp;</i> J</div>
           <h3>Share Your Response</h3>
           <p>Kindly share your response with the groom’s family</p>
-          <label
-            >Your Name<span class="field-wrap"
-              ><input
-                name="name"
-                required
-                placeholder="Enter your full name"
-              /><span aria-hidden="true">🌿</span></span
-            ></label
-          >
-          <fieldset>
-            <legend>Attendance</legend>
-            <input type="hidden" name="attendance" id="attendanceValue" value="Attending" />
-            <div class="choice-row" role="group" aria-label="Choose attendance response">
-              <button class="attendance-choice is-selected" type="button" data-attendance="Attending" aria-pressed="true">
-                <span class="choice-icon" aria-hidden="true">✧</span><b>Attending</b>
-              </button>
-              <button class="attendance-choice" type="button" data-attendance="Wishes Online" aria-pressed="false">
-                <span class="choice-icon" aria-hidden="true">♧</span><b>Wishes Online</b>
-              </button>
-            </div>
-          </fieldset>
-          <div class="rsvp-panel is-active" id="attendingPanel" data-rsvp-panel="Attending">
-            <label>Number of Guests<select name="guests">
-                <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option>
-                <option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option>
-              </select></label>
-            <fieldset>
-              <legend>Events Attending</legend>
-              <label class="check"><input type="checkbox" name="event" value="Wedding Celebration" /><span><b>Wedding Celebration</b><small>29th December 2026 · 11:00 AM</small></span></label>
-            </fieldset>
-            <label>Congratulations Message<textarea name="message" rows="4" placeholder="Write a message for the couple..."></textarea></label>
-          </div>
-          <div class="rsvp-panel" id="wishesPanel" data-rsvp-panel="Wishes Online" hidden>
-            <label>Send Your Warm Wishes<textarea name="online_wish" rows="5" placeholder="Write your blessings and wishes here..." disabled></textarea></label>
-            <p class="online-note"><span aria-hidden="true">♡</span> Your blessing will mean the world to the couple.</p>
-          </div>
-          <button class="submit-button">Send Response on WhatsApp</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
+          <p style="text-align:center"><a class="gold-button" href="https://docs.google.com/forms/d/e/1FAIpQLScdx9b3gAJPJMJw8WZKV-BglYm90yPK2WaF6sdstiJqnf7dvA/viewform" target="_blank" rel="noopener noreferrer">Open Response Form ↗</a></p>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdx9b3gAJPJMJw8WZKV-BglYm90yPK2WaF6sdstiJqnf7dvA/viewform?embedded=true" title="Paul Daniel and Joanne Biju — Wedding RSVP" width="640" height="1000" loading="lazy" style="display:block;width:100%;max-width:100%;border:0;border-radius:12px;background:#fff;">Loading response form…</iframe>
+        </div>
       </section>
 
       <section class="venues red-section">
@@ -243,13 +205,6 @@
       <button aria-label="Close image">×</button
       ><img src="assets/couple-art-front-approved.webp" alt="Enlarged wedding illustration of Paul Daniel and Joanne Biju" />
     </dialog>
-    <dialog class="success-dialog" id="successDialog">
-      <div class="success-mark" aria-hidden="true">✓</div>
-      <p class="success-kicker">Thank you</p>
-      <h2>Response submitted successfully</h2>
-      <p>Your RSVP details are ready in WhatsApp. Please tap send there to share them with the family.</p>
-      <button type="button" id="closeSuccess">Done</button>
-    </dialog>
     <aside class="youtube-music" id="youtubeMusic" aria-label="Wedding music player">
       <p><span>Now Playing</span>A Love Written by God</p>
       <iframe
@@ -262,6 +217,6 @@
         referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
     </aside>
-    <script src="script.js"></script>
+    <script src="script.js?v=google-rsvp-1"></script>
   </body>
 </html>
