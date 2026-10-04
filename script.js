@@ -182,7 +182,8 @@ function initScratch() {
     prompt?.remove();
     canvas.setAttribute("aria-disabled", "true");
     status.textContent = "Wedding date revealed: 29th December 2026";
-    hint.textContent = "Our special day is revealed ✦";
+    hint.textContent = "Scroll down to explore our wedding invitation.";
+    document.getElementById("continueInvitation").hidden = false;
     countdown.hidden = false;
     countdown.classList.add("countdown-celebration");
     const symbols = ["✦", "✧", "·"];

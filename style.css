@@ -652,3 +652,9 @@ body{background:#590b12}
 /* Load the repository-hosted venue photograph as a visible image element. */
 .venue-reference-photo{background-image:none;aspect-ratio:auto;position:relative;overflow:hidden}
 .venue-reference-photo img.venue-photo{position:static;display:block;width:100%;max-width:100%;height:auto;object-fit:contain;object-position:center;transform:none}
+
+/* A clear next step immediately after the wedding date is revealed. */
+.continue-invitation{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;margin:16px auto 4px;padding:12px 26px;border:1px solid #e5c781;border-radius:999px;background:linear-gradient(135deg,#d2a255,#a67132);color:#fff9ed;font:600 1.1rem/1.3 var(--serif);text-decoration:none;box-shadow:0 6px 20px #20000840}
+.continue-invitation[hidden]{display:none}
+.continue-invitation:focus-visible{outline:3px solid #fff2d2;outline-offset:4px}
+#weddingDetails{scroll-margin-top:20px}
